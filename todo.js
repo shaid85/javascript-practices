@@ -39,3 +39,8 @@ function update(){
     })
     tableBody.innerHTML = Str;
 }
+
+
+const add = document.getElementById('add');
+add.addEventListener("click", getAnyUpdate);
+update();
