@@ -14,3 +14,16 @@ function getAnyUpdate(){
 
     }
 }
+
+
+function update(){
+    if(localStorage.getItem('itemsJson') == null){
+        itemJsonArray = [];
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+    } else {
+        itemJsonArrayStr = localStorage.getItem('itemsJson');
+        itemJsonArray = JSON.parse(itemJsonArrayStr);
+    }    
+
+
+}
