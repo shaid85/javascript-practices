@@ -13,3 +13,12 @@ let createdElement2 = document.createElement('b');
 createdElement2.innerText = "This is new DOM Bold Text";
 newDiv[0].replaceChild(createdElement2,createdElement);
 
+
+const catBtn = document.getElementById('catBtn');
+const catmenu = document.querySelector('.dropdown');
+
+const toggleDropdown = () => {
+    catmenu.classList.toggle("active");
+}
+
+catBtn.addEventListener("click", () => toggleDropdown());
