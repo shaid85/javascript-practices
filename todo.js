@@ -13,6 +13,7 @@ function getAnyUpdate(){
         localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
 
     }
+    update();
 }
 
 
@@ -44,3 +45,20 @@ function update(){
 const add = document.getElementById('add');
 add.addEventListener("click", getAnyUpdate);
 update();
+
+function deleteitem(itemIndex){
+    console.log("Delete", itemIndex);
+    itemJsonArrayStr = localStorage.getItem('itemsJson');
+    itemJsonArray = JSON.parse(itemJsonArrayStr);
+    // Delete itemIndex element form the array
+    itemJsonArray.splice(itemIndex, 1);
+    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+    update();
+}
+
+function clearlist() {
+    if(confirm("Do you want to really clear?")){
+    localStorage.clear();
+    update();
+    }
+}
